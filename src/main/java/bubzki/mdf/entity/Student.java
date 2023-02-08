@@ -1,4 +1,4 @@
-package bubzki.mdf;
+package bubzki.mdf.entity;
 
 public class Student {
     private String name;

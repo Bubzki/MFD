@@ -9,8 +9,8 @@
     </head>
     <body>
         <h1 class="container mt-3 md-3 text-center display-2">Hello student!</h1>
-        <div class="container m-auto ">
-            <form method="post" action="StudentAdd">
+        <div class="container m-auto">
+            <form method="post" action="studentAdd">
                 <table>
                    <tbody>
                         <tr>
@@ -42,9 +42,16 @@
                 <input class="btn btn-primary mt-2" type="submit" name="send" value="Submit">
             </form>
         </div>
+        <div class="container m-auto">
+            <c:if test="${students.size() > 0}">
+                <form action="calculateStats">
+                    <input class="btn btn-info mt-2" type="submit" name="calculate" value="Statistics">
+                </form>
+            </c:if>
+        </div>
         <div class="container mt-3">
             <c:if test="${students.size() > 0}">
-                <table class="table">
+                <table class="table table-hover">
                     <thead class="table-dark">
                     <tr>
                         <th>Name</th>

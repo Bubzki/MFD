@@ -1,4 +1,6 @@
-package bubzki.mdf;
+package bubzki.mdf.servlet;
+
+import bubzki.mdf.entity.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-@WebServlet(name = "StudentAdd", value = "/StudentAdd")
+@WebServlet(name = "StudentAdd", value = "/studentAdd")
 public class StudentAdd extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -28,14 +30,8 @@ public class StudentAdd extends HttpServlet {
             students.add(student);
         }
         request.getRequestDispatcher("index.jsp").forward(request, response);
-        response.sendRedirect("index.jsp");
+        //response.sendRedirect("index.jsp");
     }
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
